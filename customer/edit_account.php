@@ -14,9 +14,9 @@ $customer_name = $row_customer['customer_name'];
 
 $customer_email = $row_customer['customer_email'];
 
-$customer_country = $row_customer['customer_country'];
+$customer_state = $row_customer['customer_state'];
 
-$customer_city = $row_customer['customer_city'];
+$customer_district = $row_customer['customer_district'];
 
 $customer_contact = $row_customer['customer_contact'];
 
@@ -48,17 +48,17 @@ $customer_image = $row_customer['customer_image'];
     
     <div class="form-group"><!-- form-group Begin -->
         
-        <label> Costumer Country: </label>
+        <label> Costumer State: </label>
         
-        <input type="text" name="c_country" class="form-control" value="<?php echo $customer_country; ?>" required>
+        <input type="text" name="c_state" class="form-control" value="<?php echo $customer_state; ?>" required>
         
     </div><!-- form-group Finish -->
     
     <div class="form-group"><!-- form-group Begin -->
         
-        <label> Costumer City: </label>
+        <label> Costumer District: </label>
         
-        <input type="text" name="c_city" class="form-control" value="<?php echo $customer_city; ?>" required>
+        <input type="text" name="c_district" class="form-control" value="<?php echo $customer_district; ?>" required>
         
     </div><!-- form-group Finish -->
     
@@ -110,9 +110,9 @@ if(isset($_POST['update'])){
     
     $c_email = $_POST['c_email'];
     
-    $c_country = $_POST['c_country'];
+    $c_state = $_POST['c_state'];
     
-    $c_city = $_POST['c_city'];
+    $c_district = $_POST['c_district'];
     
     $c_address = $_POST['c_address'];
     
@@ -124,7 +124,7 @@ if(isset($_POST['update'])){
     
     move_uploaded_file ($c_image_tmp,"customer_images/$c_image");
     
-    $update_customer = "update customers set customer_name='$c_name',customer_email='$c_email',customer_country='$c_country',customer_city='$c_city',customer_address='$c_address',customer_contact='$c_contact',customer_image='$c_image' where customer_id='$update_id' ";
+    $update_customer = "update customers set customer_name='$c_name',customer_email='$c_email',customer_state='$c_state',customer_district='$c_district',customer_address='$c_address',customer_contact='$c_contact',customer_image='$c_image' where customer_id='$update_id' ";
     
     $run_customer = mysqli_query($con,$update_customer);
     
