@@ -97,7 +97,7 @@
 
                     <strong>Utpadak Team</strong>
                     <br />Bhaktapur
-                    <br />Libali
+                    <br />Katunje
                     <br />+977 9860163520
                     <br />utpadak@gmail.com
 

@@ -29,7 +29,7 @@ include("functions/functions.php");
             <div class="col-md-6 offer">
                 <!-- col-md-6 offer Begin -->
 
-                <a href="#" class="btn btn-primary btn-sm">
+                <a href="#" class="btn btn-success btn-sm">
 
                     <?php
 
@@ -44,7 +44,7 @@ include("functions/functions.php");
                     ?>
 
                 </a>&nbsp&nbsp&nbsp&nbsp
-                <a href="checkout.php"><?php items(); ?> Items In Your Cart &nbsp | &nbsp Total Price: <?php total_price(); ?> </a>
+                <a href="cart.php"><?php items(); ?> Items In Your Cart &nbsp | &nbsp Total Price: <?php total_price(); ?> </a>
 
             </div><!-- col-md-6 offer Finish -->
 
@@ -58,7 +58,7 @@ include("functions/functions.php");
                         <a href="customer_register.php">Register</a>
                     </li>
                     <li>
-                        <a href="checkout.php">My Account</a>
+                        <a href="customer/my_account.php?my_orders">My Account</a>
                     </li>
                     <li>
                         <a href="cart.php">Go To Cart</a>
@@ -98,15 +98,11 @@ include("functions/functions.php");
             </a><!-- navbar-brand home Finish -->
         </div>
         <div class="col-md-8 right">
-            <img src="images/pashmina.jpg" style="height: 75px;padding: 4px 6px 0px 6px;margin-left: -68px;/* margin-top: 10px; */width: 574px;" alt="offers">
-            <div class="overlay-offer">
-                <button>Shop Now</button>
-            </div>
+            <img src="images/paypall_img.png" style="width: 180px;" alt="offers">
         </div>
     </div>
-    <!-- offers close -->
 
-    <div id="navbar" class="navbar navbar-default">
+    <div id="navbar" class="navbar navbar-default bg-success">
         <!-- navbar navbar-default Begin -->
 
         <div class="container">
@@ -114,6 +110,15 @@ include("functions/functions.php");
 
             <div class="navbar-header">
                 <!-- navbar-header Begin -->
+                <!-- 
+                <a href="index.php" class="navbar-brand home"> -->
+                <!-- navbar-brand home Begin -->
+                <!-- 
+                    <img src="images/utpadak.png" alt="Utpadak Logo" class="hidden-xs" style="margin-top: -7.5vh;width: 145px;">
+                    <img src="images/utpadak-mobile.png" alt="Utpadak Logo Mobile" class="visible-xs">
+
+                </a> -->
+                <!-- navbar-brand home Finish -->
 
                 <button class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
 
@@ -174,26 +179,26 @@ include("functions/functions.php");
 
                 </div><!-- padding-nav Finish -->
 
-                <a href="cart.php" class="btn navbar-btn btn-primary right">
-                    <!-- btn navbar-btn btn-primary Begin -->
+                <a href="cart.php" class="btn navbar-btn btn-success right">
+                    <!-- btn navbar-btn btn-success Begin -->
 
                     <i class="fa fa-shopping-cart"></i>
 
                     <span><?php items(); ?> Items In Your Cart</span>
 
-                </a><!-- btn navbar-btn btn-primary Finish -->
+                </a><!-- btn navbar-btn btn-success Finish -->
 
                 <div class="navbar-collapse collapse right">
                     <!-- navbar-collapse collapse right Begin -->
 
-                    <button class="btn btn-primary navbar-btn" type="button" data-toggle="collapse" data-target="#search">
-                        <!-- btn btn-primary navbar-btn Begin -->
+                    <button class="btn btn-success navbar-btn" type="button" data-toggle="collapse" data-target="#search">
+                        <!-- btn btn-success navbar-btn Begin -->
 
                         <span class="sr-only">Toggle Search</span>
 
                         <i class="fa fa-search"></i>
 
-                    </button><!-- btn btn-primary navbar-btn Finish -->
+                    </button><!-- btn btn-success navbar-btn Finish -->
 
                 </div><!-- navbar-collapse collapse right Finish -->
 
@@ -211,12 +216,12 @@ include("functions/functions.php");
                             <span class="input-group-btn">
                                 <!-- input-group-btn Begin -->
 
-                                <button type="submit" name="search" value="Search" class="btn btn-primary">
-                                    <!-- btn btn-primary Begin -->
+                                <button type="submit" name="search" value="Search" class="btn btn-success">
+                                    <!-- btn btn-success Begin -->
 
                                     <i class="fa fa-search"></i>
 
-                                </button><!-- btn btn-primary Finish -->
+                                </button><!-- btn btn-success Finish -->
 
                             </span><!-- input-group-btn Finish -->
 
