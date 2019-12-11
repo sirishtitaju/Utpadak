@@ -1,6 +1,6 @@
 <?php 
 
-$db = mysqli_connect("localhost","root","","ecom_store");
+$db = mysqli_connect("localhost","root","","utpadak_db");
 
 /// begin getRealIpUser functions ///
 
@@ -89,7 +89,7 @@ function getPro(){
             
                 <a href='details.php?pro_id=$pro_id'>
                 
-                    <img class='img-responsive' src='admin_area/product_images/$pro_img1'>
+                    <img class='img-responsive' src='admin/product_images/$pro_img1' style='height:504px; width:480px;'>
                 
                 </a>
                 
@@ -277,7 +277,7 @@ function getpcatpro(){
             
                 <a href='details.php?pro_id=$pro_id'>
                 
-                    <img class='img-responsive' src='admin_area/product_images/$pro_img1'>
+                    <img class='img-responsive' src='admin_area/product_images/$pro_img1' style='height:504px; width:480px;'>
                 
                 </a>
                 
@@ -406,7 +406,7 @@ function getcatpro(){
                                         
                         <a href='details.php?pro_id=$pro_id'>
                                             
-                            <img class='img-responsive' src='admin_area/product_images/$pro_img1'>
+                            <img class='img-responsive' src='admin_area/product_images/$pro_img1' style='height:504px; width:480px;'>
                                             
                         </a>
                                             
