@@ -30,7 +30,7 @@
         
         $user_image = $row_user['admin_image'];
         
-        $user_country = $row_user['admin_country'];
+        $user_district = $row_user['admin_district'];
         
         $user_about = $row_user['admin_about'];
         
@@ -118,11 +118,11 @@
                    
                    <div class="form-group"><!-- form-group Begin -->
                        
-                      <label class="col-md-3 control-label"> Country </label> 
+                      <label class="col-md-3 control-label"> District </label> 
                       
                       <div class="col-md-6"><!-- col-md-6 Begin -->
                           
-                          <input value="<?php echo $user_country; ?>"  name="admin_country" type="text" class="form-control" required>
+                          <input value="<?php echo $user_district; ?>"  name="admin_district" type="text" class="form-control" required>
                           
                       </div><!-- col-md-6 Finish -->
                        
@@ -160,7 +160,7 @@
                           
                           <input name="admin_image" type="file" class="form-control" required>
                           
-                          <img src="admin_images/<?php echo $admin_image; ?>" alt="<?php echo $admin_name; ?>" width="70" height="70">
+                          <img src="images/<?php echo $admin_image; ?>" alt="<?php echo $admin_name; ?>" width="70" height="70">
                           
                       </div><!-- col-md-6 Finish -->
                        
@@ -208,7 +208,7 @@ if(isset($_POST['update'])){
     $user_name = $_POST['admin_name'];
     $user_email = $_POST['admin_email'];
     $user_pass = $_POST['admin_pass'];
-    $user_country = $_POST['admin_country'];
+    $user_district = $_POST['admin_district'];
     $user_contact = $_POST['admin_contact'];
     $user_job = $_POST['admin_job'];
     $user_about = $_POST['admin_about'];
@@ -218,7 +218,7 @@ if(isset($_POST['update'])){
     
     move_uploaded_file($temp_admin_image,"admin_images/$user_image");
     
-    $update_user = "update admins set admin_name='$user_name',admin_email='$user_email',admin_pass='$user_pass',admin_country='$user_country',admin_contact='$user_contact',admin_job='$user_job',admin_about='$user_about',admin_image='$user_image' where admin_id='$user_id'";
+    $update_user = "update admins set admin_name='$user_name',admin_email='$user_email',admin_pass='$user_pass',admin_district='$user_district',admin_contact='$user_contact',admin_job='$user_job',admin_about='$user_about',admin_image='$user_image' where admin_id='$user_id'";
     
     $run_user = mysqli_query($con,$update_user);
     

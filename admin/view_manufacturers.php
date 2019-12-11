@@ -38,10 +38,12 @@
                         <thead><!-- thead begin -->
                             <tr><!-- tr begin -->
                                 <th> Manufacturer ID: </th>
-                                <th> Manufacturer Title: </th>
+                                <th> Manufacturer Name: </th>
                                 <th> Manufacturer Image: </th>
-                                <th> Manufacturer Delete: </th>
-                                <th> Manufacturer Edit: </th>
+                                <th> Email:</th>
+                                <th> Contact:</th>
+                                <th> Delete: </th>
+                                <th> Edit: </th>
                             </tr><!-- tr finish -->
                         </thead><!-- thead finish -->
                         
@@ -62,6 +64,8 @@
                                     $manufacturer_title = $row_manufacturer['manufacturer_title'];
                                     
                                     $manufacturer_image = $row_manufacturer['manufacturer_image'];
+                                     $m_email=$row_manufacturer['manufacturer_email'];
+                                    $m_contact=$row_manufacturer['manufacturer_contact'];
                                     
                                     $i++;
                             
@@ -70,7 +74,9 @@
                             <tr><!-- tr begin -->
                                 <td> <?php echo $i; ?> </td>
                                 <td> <?php echo $manufacturer_title; ?> </td>
-                                <td> <img src="other_images/<?php echo $manufacturer_image; ?>" width="60" height="60"></td>
+                                <td> <img src="manu_image/<?php echo $manufacturer_image; ?>" width="60" height="60"></td>
+                                <td><?php echo $m_email; ?></td>
+                                <td><?php echo $m_contact; ?></td>
                                 <td> 
                                      
                                      <a href="index.php?delete_manufacturer=<?php echo $manufacturer_id; ?>">

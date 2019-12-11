@@ -104,6 +104,45 @@
             
         </div><!-- panel panel-green finish -->
     </div><!-- col-lg-3 col-md-6 finish -->
+      <div class="col-lg-3 col-md-6"><!-- col-lg-3 col-md-6 begin -->
+        <div class="panel panel-primary"><!-- panel panel-green begin -->
+            
+            <div class="panel-heading"><!-- panel-heading begin -->
+                <div class="row"><!-- panel-heading row begin -->
+                    <div class="col-xs-3"><!-- col-xs-3 begin -->
+                       
+                        <i class="fa fa-flag fa-5x"></i>
+                        
+                    </div><!-- col-xs-3 finish -->
+                    
+                    <div class="col-xs-9 text-right"><!-- col-xs-9 text-right begin -->
+                        <div class="huge"> <?php echo $count_customers; ?> </div>
+                           
+                        <div> Stores </div>
+                        
+                    </div><!-- col-xs-9 text-right finish -->
+                    
+                </div><!-- panel-heading row finish -->
+            </div><!-- panel-heading finish -->
+            
+            <a href="index.php?view_customers"><!-- a href begin -->
+                <div class="panel-footer"><!-- panel-footer begin -->
+                   
+                    <span class="pull-left"><!-- pull-left begin -->
+                        View Details 
+                    </span><!-- pull-left finish -->
+                    
+                    <span class="pull-right"><!-- pull-right begin --> 
+                        <i class="fa fa-arrow-circle-right"></i> 
+                    </span><!-- pull-right finish --> 
+                    
+                    <div class="clearfix"></div>
+                    
+                </div><!-- panel-footer finish -->
+            </a><!-- a href finish -->
+            
+        </div><!-- panel panel-green finish -->
+    </div><!-- col-lg-3 col-md-6 finish -->
    
     <div class="col-lg-3 col-md-6"><!-- col-lg-3 col-md-6 begin -->
         <div class="panel panel-orange"><!-- panel panel-yellow begin -->
@@ -319,7 +358,7 @@
             <div class="panel-body"><!-- panel-body begin -->
                 <div class="mb-md thumb-info"><!-- mb-md thumb-info begin -->
 
-                    <img src="admin_images/<?php echo $admin_image; ?>" alt="<?php echo $admin_image; ?>" class="rounded img-responsive">
+                    <img src="images/<?php echo $admin_image; ?>" alt="<?php echo $admin_image; ?>" class="rounded img-responsive">
                     
                     <div class="thumb-info-title"><!-- thumb-info-title begin -->
                        
@@ -333,7 +372,7 @@
                 <div class="mb-md"><!-- mb-md begin -->
                     <div class="widget-content-expanded"><!-- widget-content-expanded begin -->
                         <i class="fa fa-user"></i> <span> Email: </span> <?php echo $admin_email; ?> <br/>
-                        <i class="fa fa-flag"></i> <span> Country: </span> <?php echo $admin_country; ?> <br/>
+                        <i class="fa fa-flag"></i> <span> District: </span> <?php echo $admin_district; ?> <br/>
                         <i class="fa fa-envelope"></i> <span> Contact: </span> <?php echo $admin_contact; ?> <br/>
                     </div><!-- widget-content-expanded finish -->
                     

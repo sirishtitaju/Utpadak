@@ -43,7 +43,37 @@
                         
                         <div class="col-md-6"><!-- col-md-6 begin -->
                         
-                            <input name="manufacturer_name" type="text" class="form-control">
+                            <input name="manufacturer_name" type="text" class="form-control" required="required">
+                        
+                        </div><!-- col-md-6 finish -->
+                    
+                    </div><!-- form-group 1 finish -->
+                     <div class="form-group"><!-- form-group 1 begin -->
+                    
+                        <label for="" class="control-label col-md-3"><!-- control-label col-md-3 begin --> 
+                        
+                        Manufacturer Email 
+                        
+                        </label><!-- control-label col-md-3 finish --> 
+                        
+                        <div class="col-md-6"><!-- col-md-6 begin -->
+                        
+                            <input type="Email" name="manufacturer_email"  class="form-control" required="required">
+                        
+                        </div><!-- col-md-6 finish -->
+                    
+                    </div><!-- form-group 1 finish -->
+                     <div class="form-group"><!-- form-group 1 begin -->
+                    
+                        <label for="" class="control-label col-md-3"><!-- control-label col-md-3 begin --> 
+                        
+                        Manufacturer Contact 
+                        
+                        </label><!-- control-label col-md-3 finish --> 
+                        
+                        <div class="col-md-6"><!-- col-md-6 begin -->
+                        
+                            <input name="manufacturer_contact" type="text" class="form-control" required="required">
                         
                         </div><!-- col-md-6 finish -->
                     
@@ -67,6 +97,25 @@
                         </div><!-- col-md-6 finish -->
                     
                     </div><!-- form-group 2 finish -->
+                    <div class="form-group"><!-- form-group 2 begin -->
+                    
+                        <label for="" class="control-label col-md-3"><!-- control-label col-md-3 begin --> 
+                        
+                          Do You Want Storing Service
+                        
+                        </label><!-- control-label col-md-3 finish --> 
+                        
+                        <div class="col-md-6"><!-- col-md-6 begin -->
+                        
+                            <input name="manufacturer_store" type="radio" value="yes">
+                            <label>Yes</label>
+                        
+                            <input name="manufacturer_store" type="radio" value="no">
+                            <label>No</label>
+                        
+                        </div><!-- col-md-6 finish -->
+                    
+                    </div><!-- form-group 2 finish -->
                     <div class="form-group"><!-- form-group 3 begin -->
                     
                         <label for="" class="control-label col-md-3"><!-- control-label col-md-3 begin --> 
@@ -77,7 +126,7 @@
                         
                         <div class="col-md-6"><!-- col-md-6 begin -->
                         
-                            <input type="file" name="manufacturer_image" class="form-control">
+                            <input type="file" name="manufacturer_image" class="form-control" required="required">
                         
                         </div><!-- col-md-6 finish -->
                     
@@ -105,16 +154,24 @@
     if(isset($_POST['submit'])){
         
         $manufacturer_name = $_POST['manufacturer_name'];
+        $manufacturer_store = $_POST['manuf
+        acturer_store'];
+
+        $manufacturer_email = $_POST['manufacturer_email'];
+
+        $manufacturer_contact = $_POST['manufacturer_contact'];
         
         $manufacturer_top = $_POST['manufacturer_top'];
         
         $manufacturer_image = $_FILES['manufacturer_image']['name'];
         
         $temp_name = $_FILES['manufacturer_image']['tmp_name'];
-            
-        move_uploaded_file($temp_name,"other_images/$manufacturer_image");
+        if (filter_var($manufacturer_email, FILTER_VALIDATE_EMAIL)) {
+     
+        move_uploaded_file($temp_name,"manu_image/$manufacturer_image");
         
-        $insert_manufacturer = "insert into manufacturers (manufacturer_title,manufacturer_top,manufacturer_image) values ('$manufacturer_name','$manufacturer_top','$manufacturer_image')";
+
+   $insert_manufacturer = "insert into manufacturers (manufacturer_title,verification_code,verified,created_at,manufacturer_top,manufacturer_store,manufacturer_image,manufacturer_email,manufacturer_contact) values ('$manufacturer_name','$verificationcode','0','$created_at','$manufacturer_top','$manufacturer_store','$manufacturer_image','$manufacturer_email','$manufacturer_contact')";
         
         $run_manufacturer = mysqli_query($con,$insert_manufacturer);
         
@@ -123,6 +180,10 @@
         echo "<script>window.open('index.php?view_manufacturers','_self')</script>";
         
     }
+    else{
+        echo "<script>alert('Invalid Email')</script>";
+    }
+}
 
 ?>
 

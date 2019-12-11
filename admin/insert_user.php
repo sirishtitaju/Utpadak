@@ -84,11 +84,11 @@
                    
                    <div class="form-group"><!-- form-group Begin -->
                        
-                      <label class="col-md-3 control-label"> Country </label> 
+                      <label class="col-md-3 control-label"> District </label> 
                       
                       <div class="col-md-6"><!-- col-md-6 Begin -->
                           
-                          <input name="admin_country" type="text" class="form-control" required>
+                          <input name="admin_district" type="text" class="form-control" required>
                           
                       </div><!-- col-md-6 Finish -->
                        
@@ -172,17 +172,17 @@ if(isset($_POST['submit'])){
     $user_name = $_POST['admin_name'];
     $user_email = $_POST['admin_email'];
     $user_pass = $_POST['admin_pass'];
-    $user_country = $_POST['admin_country'];
+    $user_district = $_POST['admin_district'];
     $user_contact = $_POST['admin_contact'];
     $user_job = $_POST['admin_job'];
     $user_about = $_POST['admin_about'];
     
     $user_image = $_FILES['admin_image']['name'];
-    $temp_admin_image = $_FILES['admin_image']['tmp_name'];
+    $temp_image = $_FILES['admin_image']['tmp_name'];
     
-    move_uploaded_file($temp_admin_image,"admin_images/$user_image");
+    move_uploaded_file($temp_image,"images/$user_image");
     
-    $insert_user = "insert into admins (admin_name,admin_email,admin_pass,admin_country,admin_contact,admin_job,admin_image,admin_about) values ('$user_name','$user_email','$user_pass','$user_country','$user_contact','$user_job','$user_image','$user_about')";
+    $insert_user = "insert into admins (admin_name,admin_email,admin_pass,admin_district,admin_contact,admin_job,admin_image,admin_about) values ('$user_name','$user_email','$user_pass','$user_district','$user_contact','$user_job','$user_image','$user_about')";
     
     $run_user = mysqli_query($con,$insert_user);
     

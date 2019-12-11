@@ -41,7 +41,7 @@
                                 <th> User Name: </th>
                                 <th> User Image: </th>
                                 <th> User E-Mail: </th>
-                                <th> User Country: </th>
+                                <th> User District: </th>
                                 <th> User Job: </th>
                                 <th> User Contact: </th>
                                 <th> Edit: </th>
@@ -69,7 +69,7 @@
                                     
                                     $user_email = $row_users['admin_email'];
                                     
-                                    $user_country = $row_users['admin_country'];
+                                    $user_district = $row_users['admin_district'];
                                     
                                     $user_job = $row_users['admin_job'];
                                     
@@ -82,9 +82,9 @@
                             <tr><!-- tr begin -->
                                 <td> <?php echo $i; ?> </td>
                                 <td> <?php echo $user_name; ?> </td>
-                                <td> <img src="../admin_area/admin_images/<?php echo $user_img; ?>" width="60" height="60"></td>
+                                <td> <img src="../admin/images/<?php echo $user_img; ?>" width="60" height="60"></td>
                                 <td> <?php echo $user_email; ?> </td>
-                                <td> <?php echo $user_country; ?></td>
+                                <td> <?php echo $user_district; ?></td>
                                 <td> <?php echo $user_job; ?> </td>
                                 <td> <?php echo $user_contact ?> </td>
                                 <td>    

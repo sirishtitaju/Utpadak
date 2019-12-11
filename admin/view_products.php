@@ -42,7 +42,7 @@
                                 <th> Product Image: </th>
                                 <th> Product Price: </th>
                                 <th> Product Sold: </th>
-                                <th> Product Keywords: </th>
+                                <th> Manufacturer Name: </th>
                                 <th> Product Date: </th>
                                 <th> Product Delete: </th>
                                 <th> Product Edit: </th>
@@ -69,7 +69,7 @@
                                     
                                     $pro_price = $row_pro['product_price'];
                                     
-                                    $pro_keywords = $row_pro['product_keywords'];
+                                    $Manu_id = $row_pro['manufacturer_name'];
                                     
                                     $pro_date = $row_pro['date'];
                                     
@@ -94,7 +94,7 @@
                                     
                                      ?> 
                                 </td>
-                                <td> <?php echo $pro_keywords; ?> </td>
+                                <td> <?php echo $Manu_id; ?> </td>
                                 <td> <?php echo $pro_date ?> </td>
                                 <td> 
                                      

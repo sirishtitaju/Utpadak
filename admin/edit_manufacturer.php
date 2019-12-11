@@ -19,6 +19,8 @@
 
             $m_id = $row_manufacturer['manufacturer_id'];
             $m_title = $row_manufacturer['manufacturer_title'];
+            $m_email=$row_manufacturer['manufacturer_email'];
+            $m_contact=$row_manufacturer['manufacturer_contact'];
             $m_top = $row_manufacturer['manufacturer_top'];
             $m_image = $row_manufacturer['manufacturer_image'];
 
@@ -62,6 +64,36 @@
                         <div class="col-md-6"><!-- col-md-6 begin -->
                         
                             <input name="manufacturer_name" type="text" class="form-control" value="<?php echo $m_title; ?>">
+                        
+                        </div><!-- col-md-6 finish -->
+                    
+                    </div><!-- form-group 1 finish -->
+                    <div class="form-group"><!-- form-group 1 begin -->
+                    
+                        <label for="" class="control-label col-md-3"><!-- control-label col-md-3 begin --> 
+                        
+                        Manufacturer Email 
+                        
+                        </label><!-- control-label col-md-3 finish --> 
+                        
+                        <div class="col-md-6"><!-- col-md-6 begin -->
+                        
+                            <input name="manufacturer_email" type="text" class="form-control" value="<?php echo $m_email; ?>">
+                        
+                        </div><!-- col-md-6 finish -->
+                    
+                    </div><!-- form-group 1 finish -->
+                    <div class="form-group"><!-- form-group 1 begin -->
+                    
+                        <label for="" class="control-label col-md-3"><!-- control-label col-md-3 begin --> 
+                        
+                        Manufacturer Contact 
+                        
+                        </label><!-- control-label col-md-3 finish --> 
+                        
+                        <div class="col-md-6"><!-- col-md-6 begin -->
+                        
+                            <input name="manufacturer_contact" type="text" class="form-control" value="<?php echo $m_contact; ?>">
                         
                         </div><!-- col-md-6 finish -->
                     
@@ -145,6 +177,9 @@
         $manufacturer_name = $_POST['manufacturer_name'];
         
         $manufacturer_top = $_POST['manufacturer_top'];
+        $manufacturer_email = $_POST['manufacturer_email'];
+
+        $manufacturer_contact = $_POST['manufacturer_contact'];
 
         if(is_uploaded_file($_FILES['manufacturer_image']['tmp_name'])){
         
@@ -152,9 +187,9 @@
             
             $temp_name = $_FILES['manufacturer_image']['tmp_name'];
                 
-            move_uploaded_file($temp_name,"other_images/$manufacturer_image");
+            move_uploaded_file($temp_name,"manu_image/$manufacturer_image");
             
-            $update_manufacturer = "update manufacturers set manufacturer_title='$manufacturer_name',manufacturer_top='$manufacturer_top',manufacturer_image='$manufacturer_image'where manufacturer_id='$m_id'" ;
+            $update_manufacturer = "update manufacturers set manufacturer_title='$manufacturer_name',manufacturer_top='$manufacturer_top',manufacturer_image='$manufacturer_image',manufacturer_email='$manufacturer_email',manufacturer_contact='$manufacturer_contact' where manufacturer_id='$m_id'" ;
             
             $run_manufacturer = mysqli_query($con,$update_manufacturer);
 

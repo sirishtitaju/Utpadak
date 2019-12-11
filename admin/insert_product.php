@@ -73,31 +73,7 @@
                       
                       <div class="col-md-6"><!-- col-md-6 Begin -->
                           
-                          <select name="manufacturer" class="form-control"><!-- form-control Begin -->
-                              
-                              <option selected disabled> Select a Manufacturer </option>
-                              
-                              <?php 
-                              
-                              $get_manufacturer = "select * from manufacturers";
-                              $run_manufacturer = mysqli_query($con,$get_manufacturer);
-                              
-                              while ($row_manufacturer=mysqli_fetch_array($run_manufacturer)){
-                                  
-                                  $manufacturer_id = $row_manufacturer['manufacturer_id'];
-                                  $manufacturer_title = $row_manufacturer['manufacturer_title'];
-                                  
-                                  echo "
-                                  
-                                  <option value='$manufacturer_id'> $manufacturer_title </option>
-                                  
-                                  ";
-                                  
-                              }
-                              
-                              ?>
-                              
-                          </select><!-- form-control Finish -->
+                         <input name="manufacturer" type="text" class="form-control" required>
                           
                       </div><!-- col-md-6 Finish -->
                        
@@ -265,7 +241,10 @@
                       
                       <div class="col-md-6"><!-- col-md-6 Begin -->
                           
-                          <input name="product_label" type="text" class="form-control">
+                                                   <input name="product_label" type="radio" value="new">
+                          <label>New</label>
+                          <input name="product_label" type="radio" value="sale">
+                          <label>Sale</label>     
                           
                       </div><!-- col-md-6 Finish -->
                        
@@ -306,7 +285,7 @@ if(isset($_POST['submit'])){
     $product_title = $_POST['product_title'];
     $product_cat = $_POST['product_cat'];
     $cat = $_POST['cat'];
-    $manufacturer_id = $_POST['manufacturer'];
+    $manufacturer_name = $_POST['manufacturer'];
     $product_price = $_POST['product_price'];
     $product_keywords = $_POST['product_keywords'];
     $product_desc = $_POST['product_desc'];
@@ -321,11 +300,15 @@ if(isset($_POST['submit'])){
     $temp_name2 = $_FILES['product_img2']['tmp_name'];
     $temp_name3 = $_FILES['product_img3']['tmp_name'];
     
+    $get_ma = "select count(*) as total from manufacturers where manufacturer_title='$manufacturer_name'";
+   $num=mysqli_query($con,$get_ma);
+   $nm=mysqli_fetch_object($num);;
+    if ($nm->total==1) {
     move_uploaded_file($temp_name1,"product_images/$product_img1");
     move_uploaded_file($temp_name2,"product_images/$product_img2");
     move_uploaded_file($temp_name3,"product_images/$product_img3");
     
-    $insert_product = "insert into products (p_cat_id,cat_id,manufacturer_id,date,product_title,product_img1,product_img2,product_img3,product_price,product_keywords,product_desc,product_label,product_sale) values ('$product_cat','$cat','$manufacturer_id',NOW(),'$product_title','$product_img1','$product_img2','$product_img3','$product_price','$product_keywords','$product_desc','$product_label','$product_sale')";
+    $insert_product = "insert into products (p_cat_id,cat_id,manufacturer_name,date,product_title,product_img1,product_img2,product_img3,product_price,product_keywords,product_desc,product_label,product_sale) values ('$product_cat','$cat','$manufacturer_name',NOW(),'$product_title','$product_img1','$product_img2','$product_img3','$product_price','$product_keywords','$product_desc','$product_label','$product_sale')";
     
     $run_product = mysqli_query($con,$insert_product);
     
@@ -335,6 +318,9 @@ if(isset($_POST['submit'])){
         echo "<script>window.open('index.php?view_products','_self')</script>";
         
     }
+  }else{
+    echo "<script>alert('Manufacturer doesnot exist')</script>";
+  }
     
 }
 

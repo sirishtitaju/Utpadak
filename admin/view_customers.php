@@ -41,8 +41,8 @@
                                 <th> Name: </th>
                                 <th> Image: </th>
                                 <th> E-Mail: </th>
-                                <th> Country: </th>
-                                <th> City: </th>
+                                <th> State: </th>
+                                <th> District: </th>
                                 <th> Address: </th>
                                 <th> Contact: </th>
                                 <th> Delete: </th>
@@ -69,9 +69,9 @@
                                     
                                     $c_email = $row_c['customer_email'];
                                     
-                                    $c_country = $row_c['customer_country'];
+                                    $c_state = $row_c['customer_state'];
                                     
-                                    $c_city = $row_c['customer_city'];
+                                    $c_district= $row_c['customer_district'];
                                     
                                     $c_address = $row_c['customer_address'];
                                     
@@ -86,8 +86,8 @@
                                 <td> <?php echo $c_name; ?> </td>
                                 <td> <img src="../customer/customer_images/<?php echo $c_img; ?>" width="60" height="60"></td>
                                 <td> <?php echo $c_email; ?> </td>
-                                <td> <?php echo $c_country; ?></td>
-                                <td> <?php echo $c_city; ?> </td>
+                                <td> <?php echo $c_state; ?></td>
+                                <td> <?php echo $c_district; ?> </td>
                                 <td> <?php echo $c_address ?> </td>
                                 <td> <?php echo $c_contact ?> </td>
                                 <td> 

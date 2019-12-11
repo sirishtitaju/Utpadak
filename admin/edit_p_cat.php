@@ -24,8 +24,6 @@
         
         $p_cat_title = $row_edit['p_cat_title'];
         
-        $p_cat_top = $row_edit['p_cat_top'];
-        
         $p_cat_image = $row_edit['p_cat_image'];
         
     }
@@ -73,42 +71,6 @@
                     
                     </div><!-- form-group finish -->
                     
-                    <div class="form-group"><!-- form-group 2 begin -->
-                    
-                        <label for="" class="control-label col-md-3"><!-- control-label col-md-3 begin --> 
-                        
-                            Choose As Top Manufacturer
-                        
-                        </label><!-- control-label col-md-3 finish --> 
-                        
-                        <div class="col-md-6"><!-- col-md-6 begin -->
-                        
-                        <input name="p_cat_top" type="radio" value="yes"
-
-                            <?php 
-                            
-                                if($p_cat_top=='no'){}else{echo "checked='checked'";}
-                            
-                            ?>
-                        
-                        >
-                        <label>Yes</label>
-                    
-                        <input name="p_cat_top" type="radio" value="no"
-                        
-                            <?php 
-                            
-                                if($p_cat_top=='no'){echo "checked='checked'";}
-                            
-                            ?>
-                        
-                        >
-                        <label>No</label>
-                        
-                        </div><!-- col-md-6 finish -->
-                    
-                    </div><!-- form-group 2 finish -->
-                    
                     <div class="form-group"><!-- form-group 3 begin -->
                     
                         <label for="" class="control-label col-md-3"><!-- control-label col-md-3 begin --> 
@@ -155,7 +117,6 @@
               
               $p_cat_title = $_POST['p_cat_title'];
               
-              $p_cat_top = $_POST['p_cat_top'];
 
               if(is_uploaded_file($_FILES['p_cat_image']['tmp_name'])){
               
@@ -163,7 +124,7 @@
                 
                 $temp_name = $_FILES['p_cat_image']['tmp_name'];
                 
-                $update_p_cat = "update product_categories set p_cat_title='$p_cat_title',p_cat_top='$p_cat_top',p_cat_image='$p_cat_image' where p_cat_id='$p_cat_id'";
+                $update_p_cat = "update product_categories set p_cat_title='$p_cat_title',p_cat_image='$p_cat_image' where p_cat_id='$p_cat_id'";
                 
                 $run_p_cat = mysqli_query($con,$update_p_cat);
                 

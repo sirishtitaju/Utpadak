@@ -9,17 +9,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>M-Dev Store Admin Area</title>
+    <title>Utpadak Admin Pannel</title>
     <link rel="stylesheet" href="css/bootstrap-337.min.css">
     <link rel="stylesheet" href="font-awsome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/login.css">
 </head>
-<body>
-   
-   <div class="container"><!-- container begin -->
+<body style="background-image: url(../images/utpadak-logo.png);background-repeat: no-repeat;">
+   <div class="container" ><!-- container begin -->
        <form action="" class="form-login" method="post"><!-- form-login begin -->
-           <h2 class="form-login-heading"> Admin Login </h2>
+
+           <h2 class="form-login-heading"> Admin Login Panel </h2>
            
            <input type="text" class="form-control" placeholder="Email Address" name="admin_email" required>
            
