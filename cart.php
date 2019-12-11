@@ -101,7 +101,7 @@
                                        
                                        <td>
                                            
-                                           <img class="img-responsive" src="admin_area/product_images/<?php echo $product_img1; ?>" alt="Product 3a">
+                                           <img class="img-responsive" src="admin/product_images/<?php echo $product_img1; ?>" alt="Product 3a">
                                            
                                        </td>
                                        
@@ -325,17 +325,7 @@
                     $pro_img1 = $row_products['product_img1'];
                     
                     $pro_label = $row_products['product_label'];
-                    
-                    $manufacturer_id = $row_products['manufacturer_id'];
-            
-                    $get_manufacturer = "select * from manufacturers where manufacturer_id='$manufacturer_id'";
-            
-                    $run_manufacturer = mysqli_query($db,$get_manufacturer);
-            
-                    $row_manufacturer = mysqli_fetch_array($run_manufacturer);
-            
-                    $manufacturer_title = $row_manufacturer['manufacturer_title'];
-            
+ 
                     if($pro_label == "sale"){
             
                         $product_price = " <del> $ $pro_price </del> ";
@@ -375,17 +365,11 @@
                         
                             <a href='details.php?pro_id=$pro_id'>
                             
-                                <img class='img-responsive' src='admin_area/product_images/$pro_img1'>
+                                <img class='img-responsive' src='admin/product_images/$pro_img1'>
                             
                             </a>
                             
                             <div class='text'>
-            
-                            <center>
-                            
-                                <p class='btn btn-primary'> $manufacturer_title </p>
-                            
-                            </center>
                             
                                 <h3>
                         

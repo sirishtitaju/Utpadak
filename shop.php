@@ -301,17 +301,11 @@
 
             // getProducts Function Finish //
 
-            $('.get_manufacturer').click(function(){
-                getProducts();
-            });
 
             $('.get_p_cat').click(function(){
                 getProducts();
             });
 
-            $('.get_cat').click(function(){
-                getProducts();
-            });
 
         });
     

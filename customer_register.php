@@ -60,17 +60,17 @@
                            
                            <div class="form-group"><!-- form-group Begin -->
                                
-                               <label>Your Country</label>
+                               <label>Your State</label>
                                
-                               <input type="text" class="form-control" name="c_country" required>
+                               <input type="text" class="form-control" name="c_state" required>
                                
                            </div><!-- form-group Finish -->
                            
                            <div class="form-group"><!-- form-group Begin -->
                                
-                               <label>Your City</label>
+                               <label>Your District</label>
                                
-                               <input type="text" class="form-control" name="c_city" required>
+                               <input type="text" class="form-control" name="c_district" required>
                                
                            </div><!-- form-group Finish -->
                            
@@ -143,9 +143,9 @@ if(isset($_POST['register'])){
     
     $c_pass = $_POST['c_pass'];
     
-    $c_country = $_POST['c_country'];
+    $c_state = $_POST['c_state'];
     
-    $c_city = $_POST['c_city'];
+    $c_district = $_POST['c_district'];
     
     $c_contact = $_POST['c_contact'];
     
@@ -159,7 +159,7 @@ if(isset($_POST['register'])){
     
     move_uploaded_file($c_image_tmp,"customer/customer_images/$c_image");
     
-    $insert_customer = "insert into customers (customer_name,customer_email,customer_pass,customer_country,customer_city,customer_contact,customer_address,customer_image,customer_ip) values ('$c_name','$c_email','$c_pass','$c_country','$c_city','$c_contact','$c_address','$c_image','$c_ip')";
+    $insert_customer = "insert into customers (customer_name,customer_email,customer_pass,customer_state,customer_district,customer_contact,customer_address,customer_image,customer_ip,is_manufacturer) values ('$c_name','$c_email','$c_pass','$c_state','$c_district','$c_contact','$c_address','$c_image','$c_ip','0')";
     
     $run_customer = mysqli_query($con,$insert_customer);
     
