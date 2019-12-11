@@ -1,6 +1,6 @@
 <?php 
 
-$db = mysqli_connect("localhost","root","","ecom_store");
+$db = mysqli_connect("localhost","root","","utpadak_db");
 
 /// begin getRealIpUser functions ///
 
@@ -107,9 +107,9 @@ function getPro(){
         
         $pro_label = $row_products['product_label'];
         
-        $manufacturer_id = $row_products['manufacturer_id'];
+        $manufacturer_name = $row_products['manufacturer_name'];
 
-        $get_manufacturer = "select * from manufacturers where manufacturer_id='$manufacturer_id'";
+        $get_manufacturer = "select * from manufacturers where manufacturer_title='$manufacturer_name'";
 
         $run_manufacturer = mysqli_query($db,$get_manufacturer);
 
@@ -147,16 +147,17 @@ function getPro(){
             ";
 
         }
-        
+        // <p class='btn btn-primary'> $manufacturer_title </p>
+
         echo "
         
-        <div class='col-md-4 col-sm-6 single'>
+        <div class='col-md-3 col-sm-5'>
         
             <div class='product'>
             
                 <a href='details.php?pro_id=$pro_id'>
                 
-                    <img class='img-responsive' src='admin_area/product_images/$pro_img1'>
+                    <img class='img-responsive' src='admin/product_images/$pro_img1' style='height:504px; width:480px;'>
                 
                 </a>
                 
@@ -164,8 +165,7 @@ function getPro(){
 
                 <center>
                 
-                    <p class='btn btn-primary'> $manufacturer_title </p>
-                
+                                    
                 </center>
                 
                     <h3>
@@ -422,9 +422,9 @@ function getProducts(){
         
         $pro_label = $row_products['product_label'];
         
-        $manufacturer_id = $row_products['manufacturer_id'];
+        $manufacturer_name = $row_products['manufacturer_name'];
 
-        $get_manufacturer = "select * from manufacturers where manufacturer_id='$manufacturer_id'";
+        $get_manufacturer = "select * from manufacturers where manufacturer_title='$manufacturer_name'";
 
         $run_manufacturer = mysqli_query($db,$get_manufacturer);
 
@@ -462,7 +462,7 @@ function getProducts(){
             ";
 
         }
-        
+         // <p class='btn btn-primary'> $manufacturer_title </p>
         echo "
         
         <div class='col-md-4 col-sm-6 center-responsive'>
@@ -471,15 +471,13 @@ function getProducts(){
             
                 <a href='details.php?pro_id=$pro_id'>
                 
-                    <img class='img-responsive' src='admin_area/product_images/$pro_img1'>
+                    <img class='img-responsive' src='admin/product_images/$pro_img1' style='height:504px; width:480px;'>
                 
                 </a>
                 
                 <div class='text'>
 
                 <center>
-                
-                    <p class='btn btn-primary'> $manufacturer_title </p>
                 
                 </center>
                 
